@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "sonoscli": {
+      "version": "1.0.0",
+      "installedAt": 1775771156107
+    },
+    "self-improving": {
+      "version": "1.2.16",
+      "installedAt": 1775771729653
+    },
+    "debug-pro": {
+      "version": "1.0.0",
+      "installedAt": 1775798982157
+    }
+  }
+}

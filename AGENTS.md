@@ -1,0 +1,1 @@
+[prior AGENTS.md...]\n\n## Obsidian Evolution\n- Vault: workspace md graph.\n- Self-improve: Review MEMORY/10-codes → dataview query → heartbeat distill.\n- Cron: openclaw cron \"Review md → Obsidian notes\".

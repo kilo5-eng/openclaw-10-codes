@@ -1,0 +1,44 @@
+[
+  {
+    "timestamp": "2026-04-09T20:53:59.481294",
+    "checks": {
+      "Alpaca": {
+        "status": "GREEN",
+        "detail": "SPY close $679.5"
+      },
+      "CoinGecko": {
+        "status": "GREEN",
+        "detail": "ETH $2195.6"
+      },
+      "Brave": {
+        "status": "GREEN",
+        "detail": "SKIP(optional) BRAVE_API_KEY missing"
+      },
+      "HyperLiquid": {
+        "status": "GREEN",
+        "detail": "229 assets"
+      },
+      "DigitalOcean": {
+        "status": "GREEN",
+        "detail": "SKIP(optional) DO_TOKEN missing"
+      },
+      "Docker": {
+        "status": "GREEN",
+        "detail": "SKIP(optional) docker command failed rc=1"
+      },
+      "MBOUM": {
+        "status": "GREEN",
+        "detail": "SPY $679.91"
+      },
+      "FRED": {
+        "status": "FAIL",
+        "detail": "check_fred_env failed: Traceback (most recent call last):\n  File \"/home/kcinc/.hermes/10-codes/scripts/check_fred_env.py\", line 12, in <module>\n    from datetime import UTC, datetime\nImportError: cannot import name 'UTC' from 'datetime' (/usr/lib/python3.10/datetime.py)"
+      },
+      "10-201 ReadOnly": {
+        "status": "GREEN",
+        "detail": "status=GREEN detail=read_only=True state_unchanged=True guard_all_unchanged=True mode=do_primary"
+      }
+    },
+    "summary": "ISSUES DETECTED"
+  }
+]
