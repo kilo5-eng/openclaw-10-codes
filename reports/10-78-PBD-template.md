@@ -1,0 +1,1 @@
+# 10-78 PBD Report - [DATE]\n\n**Symbol:** [SYMBOL]\n**Bias:** [HTF Bias]\n\n## Multi-TF Summary\n| TF | VA | Setup | Notes |\n|----|----|-------|-------|\n| 3M | ... | ... | ... |\n| 1W | ... | ... | ... |\n| 1D | ... | ... | ... |\n| 4H | ... | ... | ... |\n\n**Live Data:** Price $[PRICE], Vol [VOL]\n**Action:** [BUY/SELL/HOLD]

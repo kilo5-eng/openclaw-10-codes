@@ -1,0 +1,61 @@
+{
+  "entities": [
+    {
+      "id": "slv-etf",
+      "type": "Asset",
+      "properties": {
+        "name": "SLV (iShares Silver Trust ETF)",
+        "ticker": "SLV",
+        "class": "ETF",
+        "underlying": "Physical Silver"
+      },
+      "last_price": 69.08,
+      "last_update": "2026-04-10T16:00:00Z"
+    },
+    {
+      "id": "silver-spot",
+      "type": "Commodity",
+      "properties": {
+        "name": "Silver Spot Price (USD/oz)",
+        "symbol": "XAG",
+        "market": "COMEX"
+      },
+      "last_price": 75.76,
+      "last_bid": 75.76,
+      "last_ask": 76.01,
+      "last_update": "2026-04-12T14:24:00Z"
+    },
+    {
+      "id": "10-73-task",
+      "type": "Task",
+      "properties": {
+        "title": "10-73 SLV Price Lookup",
+        "status": "active",
+        "description": "Fetch live ETF + silver spot data via MBOUM/Fintel (paid) or free APIs",
+        "script": "scripts/10-73-slv-v4.sh"
+      },
+      "relations": [
+        {"to": "slv-etf", "type": "monitors"},
+        {"to": "silver-spot", "type": "monitors"}
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from": "10-73-task",
+      "type": "uses_api",
+      "to": "mboum-finance",
+      "priority": "primary"
+    },
+    {
+      "from": "10-73-task",
+      "type": "fallback_api",
+      "to": "yahoo-finance"
+    },
+    {
+      "from": "10-73-task",
+      "type": "fallback_api",
+      "to": "metals-live"
+    }
+  ]
+}
