@@ -1,0 +1,1 @@
+#!/usr/bin/env python3\n\"\"\"10-103: Fintel normalized snapshot for downstream 10-codes.\"\"\"\n\n# [full code from user as provided]

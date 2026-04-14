@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-13T12:35:51.268Z",
+  "entries": {
+    "memory:memory/2026-04-12.md:1:5": {
+      "key": "memory:memory/2026-04-12.md:1:5",
+      "path": "memory/2026-04-12.md",
+      "startLine": 1,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "10-73 slv: Script created scripts/10-73-slv.sh (curl Yahoo/Kitco grep). SLV ETF $69.08 (Apr 10 close) silver spot $75.76 bid (Kitco). 2026-04-12. Telegram sync cron \"telegram-main-sync\" added (3s interval), raw leak fixed to internal \"no relay\", then removed. Only 10-11-daily cron left. Gateway restarted pid 26328. openclaw status OK.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.35977479815483093,
+      "maxScore": 0.35977479815483093,
+      "firstRecalledAt": "2026-04-12T22:06:49.317Z",
+      "lastRecalledAt": "2026-04-12T22:06:49.317Z",
+      "queryHashes": [
+        "d4c7c6fb2f41"
+      ],
+      "recallDays": [
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "gateway",
+        "10-73",
+        "scripts/10-73-slv.sh",
+        "yahoo/kitco",
+        "69.08",
+        "75.76",
+        "telegram-main-sync",
+        "10-11-daily"
+      ]
+    },
+    "memory:memory/2026-04-12.md:23:55": {
+      "key": "memory:memory/2026-04-12.md:23:55",
+      "path": "memory/2026-04-12.md",
+      "startLine": 23,
+      "endLine": 55,
+      "source": "memory",
+      "snippet": "- API keys loaded from `/home/kcinc/.openclaw/.env` (MBOUM_API_KEY, FINTEL_API_KEY) - Tested: 10-73 BMNR → $21.28 (MBOUM working, yfinance crumb auth broken) - Usage: `python3 scripts/10-73.py --query BMNR` or `--symbol BMNR,SPY` **Code Stability Policy Implemented:** - Created `.code-integrity-check.sh` — prevents script duplication - Created `.CODE-STABILITY-POLICY.md` — enforces canonical locations - Rule: hermes-config/10-codes/scripts/ is read-only reference; rebuild in openclaw/scripts/ - Prevents future drift/reimplementation **Skills Integration Status:** - self-improving: Active (corrections.md) - ontology: 10-73 entities wired (SLV/silver assets) - github: eth_sfr weekly sync que",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.353220784664154,
+      "maxScore": 0.353220784664154,
+      "firstRecalledAt": "2026-04-13T12:35:51.268Z",
+      "lastRecalledAt": "2026-04-13T12:35:51.268Z",
+      "queryHashes": [
+        "336bd2d65b7b"
+      ],
+      "recallDays": [
+        "2026-04-13"
+      ],
+      "conceptTags": [
+        "home/kcinc",
+        "mboum-api-key",
+        "fintel-api-key",
+        "10-73",
+        "21.28",
+        "scripts/10-73.py",
+        "code-integrity-check.sh",
+        "code-stability-policy.md"
+      ]
+    }
+  }
+}
