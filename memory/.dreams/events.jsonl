@@ -1,2 +1,3 @@
 {"type":"memory.recall.recorded","timestamp":"2026-04-12T22:06:49.317Z","query":"MBOUM curl examples endpoints SLV silver price query","resultCount":1,"results":[{"path":"memory/2026-04-12.md","startLine":1,"endLine":5,"score":0.35977479815483093}]}
 {"type":"memory.recall.recorded","timestamp":"2026-04-13T12:35:51.268Z","query":"fintel endpoint tested OR fintel short interest OR price API","resultCount":1,"results":[{"path":"memory/2026-04-12.md","startLine":23,"endLine":55,"score":0.353220784664154}]}
+{"type":"memory.recall.recorded","timestamp":"2026-04-16T13:19:51.259Z","query":"BRICS de-dollar","resultCount":1,"results":[{"path":"memory/2026-04-12.md","startLine":23,"endLine":55,"score":0.43451016483355953}]}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-13T12:35:51.268Z",
+  "updatedAt": "2026-04-16T13:19:51.259Z",
   "entries": {
     "memory:memory/2026-04-12.md:1:5": {
       "key": "memory:memory/2026-04-12.md:1:5",
@@ -40,18 +40,20 @@
       "endLine": 55,
       "source": "memory",
       "snippet": "- API keys loaded from `/home/kcinc/.openclaw/.env` (MBOUM_API_KEY, FINTEL_API_KEY) - Tested: 10-73 BMNR → $21.28 (MBOUM working, yfinance crumb auth broken) - Usage: `python3 scripts/10-73.py --query BMNR` or `--symbol BMNR,SPY` **Code Stability Policy Implemented:** - Created `.code-integrity-check.sh` — prevents script duplication - Created `.CODE-STABILITY-POLICY.md` — enforces canonical locations - Rule: hermes-config/10-codes/scripts/ is read-only reference; rebuild in openclaw/scripts/ - Prevents future drift/reimplementation **Skills Integration Status:** - self-improving: Active (corrections.md) - ontology: 10-73 entities wired (SLV/silver assets) - github: eth_sfr weekly sync que",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.353220784664154,
-      "maxScore": 0.353220784664154,
+      "totalScore": 0.7877309494977136,
+      "maxScore": 0.43451016483355953,
       "firstRecalledAt": "2026-04-13T12:35:51.268Z",
-      "lastRecalledAt": "2026-04-13T12:35:51.268Z",
+      "lastRecalledAt": "2026-04-16T13:19:51.259Z",
       "queryHashes": [
-        "336bd2d65b7b"
+        "336bd2d65b7b",
+        "9116eced5055"
       ],
       "recallDays": [
-        "2026-04-13"
+        "2026-04-13",
+        "2026-04-16"
       ],
       "conceptTags": [
         "home/kcinc",

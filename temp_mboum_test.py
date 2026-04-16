@@ -1,0 +1,1 @@
+import requests\nimport json\n\nurl = 'https://mboum.com/api/v2/markets/options'\nparams = {\n 'ticker': 'AAPL',\n 'type': 'STOCKS',\n 'limit': '50'\n}\nheaders = {\n 'Authorization': 'Bearer $MBOUM_API_KEY'\n}\n\nresponse = requests.request('GET', url, headers=headers, params=params)\nprint(response.json())
