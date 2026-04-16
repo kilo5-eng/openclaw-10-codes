@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-'''10-88 BMNR Dashboard: 10-78 PBD + 10-323 Options + 10-85 Fintel.'''
+'''10-88 TICKER Dashboard: 10-78 PBD + 10-323 Options + 10-85 Fintel.'''
 
 import subprocess
 import sys
 from datetime import datetime
 
-tickers = ['BMNR']
+tickers = ['TICKER']
 
-print(f'BMNR Dashboard {datetime.now().strftime("%Y-%m-%d")}')
+print(f'TICKER Dashboard {datetime.now().strftime("%Y-%m-%d")}')
 
 for t in tickers:
     print(f'\\n=== {t.upper()} ===')
