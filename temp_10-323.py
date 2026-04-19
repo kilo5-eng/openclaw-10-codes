@@ -17,14 +17,41 @@ Interactive mode (no arguments): prompts for ticker and parameters.
 import argparse
 import json
 import datetime
-try:
-    import yfinance as yf
-except ImportError:
-    yf = None
+#try:
+#    import yfinance as yf
+#except ImportError:
+yf = None
 import numpy as np
 from scipy.stats import norm
+import os
+import requests
+from dotenv import load_dotenv
+load_dotenv('/home/kcinc/.openclaw/.env')
+
+def get_mboum_price(ticker):
+    api_key = os.getenv('MBOUM_API_KEY')
+    if not api_key:
+        return None
+    url = f"https://mboum.com/api/v1/markets/quote?ticker={ticker}&type=STOCKS"
+    headers = {"Authorization": f"Bearer {api_key}"}
+    response = requests.get(url, headers=headers)
+    print(f"Response for {ticker}: {response.text}")
+    if response.status_code == 200:
+        data = response.json()
+        if 'body' in data and isinstance(data['body'], dict) and 'lastSalePrice' in data['body']:
+            price_str = data['body']['lastSalePrice']
+            return float(price_str.replace('$', ''))
+    return None
 
 def black_scholes_greeks(S, K, T, r, sigma, type="call"):
+    if T <= 0 or sigma <= 0:
+        return {
+            "delta": 0,
+            "gamma": 0,
+            "theta": 0,
+            "vega": 0,
+            "rho": 0
+        }
     d1 = (np.log(S/K) + (r + sigma**2/2)*T) / (sigma*np.sqrt(T))
     d2 = d1 - sigma* np.sqrt(T)
     if type == "call":
@@ -48,6 +75,8 @@ def black_scholes_greeks(S, K, T, r, sigma, type="call"):
     }
 
 def monte_carlo_projection(S, sigma, r, T, steps, sims):
+    if T <= 0 or sigma <= 0:
+        return {"mean": S, "95_ci_low": S, "95_ci_high": S}
     dt = T/steps
     paths = np.exp((r - 0.5 * sigma**2) * dt + sigma * np.sqrt(dt) * np.random.normal(size=(steps, sims)))
     paths = np.cumprod(paths, axis=0) * S
@@ -73,52 +102,63 @@ def main():
     output = {"date": args.date, "symbols": tickers, "analysis": {}}
     for ticker in tickers:
         analysis = {}
-        if yf is None:
-            analysis["error"] = "yfinance not installed"
-            output["analysis"][ticker] = analysis
-            continue
-        stock = yf.Ticker(ticker)
-        current_price = get_mboum_price(ticker) or stock.info.get("currentPrice", None) or 21.28
-
-def get_mboum_price(symbol):
-    mboum_key = os.getenv('MBOUM_API_KEY')
-    if not mboum_key:
-        return None
-    url = f"https://mboum.com/api/v1/markets/quote?symbol={symbol}"
-    headers = {"Authorization": f"Bearer {mboum_key}"}
-    resp = requests.get(url, headers=headers)
-    if resp.status_code == 200:
-        data = resp.json()
-        if 'data' in data and data['data']:
-            return data['data'][0].get('lastPrice')
-    return None
+        stock = yf.Ticker(ticker) if yf else None
+        current_price = get_mboum_price(ticker)
+        if current_price is None:
+            current_price = 21.28
+            if stock:
+                try:
+                    current_price = stock.info.get("currentPrice", current_price)
+                except Exception as e:
+                    print(f"yfinance info failed for {ticker}: {str(e)}")
         analysis["current_price"] = current_price
-        expirations = stock.options
-        if not expirations:
-            analysis["error"] = "No options data available"
-            output["analysis"][ticker] = analysis
-            continue
+        expirations = []
+        if stock:
+            try:
+                expirations = stock.options
+            except Exception as e:
+                print(f"yfinance options failed for {ticker}: {str(e)}")
         target_date = datetime.date.fromisoformat(args.date)
-        closest_exp = min(expirations, key=lambda d: abs(datetime.date.fromisoformat(d) - target_date))
-        opt_chain = stock.option_chain(closest_exp)
-        analysis["options_chain_summary"] = {"expiration": closest_exp, "num_calls": len(opt_chain.calls), "num_puts": len(opt_chain.puts)}
-        atm_iv = opt_chain.calls.iloc[0]["impliedVolatility"]  # simplistic
-        analysis["atm_iv"] = atm_iv
+        if not expirations:
+            closest_exp = args.date
+            atm_iv = 0.5
+            analysis["options_chain_summary"] = {"expiration": closest_exp, "num_calls": 0, "num_puts": 0}
+            analysis["atm_iv"] = atm_iv
+        else:
+            closest_exp = min(expirations, key=lambda d: abs(datetime.date.fromisoformat(d) - target_date))
+            try:
+                opt_chain = stock.option_chain(closest_exp)
+                analysis["options_chain_summary"] = {"expiration": closest_exp, "num_calls": len(opt_chain.calls), "num_puts": len(opt_chain.puts)}
+                atm_iv = opt_chain.calls.iloc[0]["impliedVolatility"]
+                analysis["atm_iv"] = atm_iv
+            except Exception as e:
+                print(f"yfinance option_chain failed for {ticker}: {str(e)}")
+                atm_iv = 0.5
+                analysis["atm_iv"] = atm_iv
         K = current_price
-        T = (datetime.date.fromisoformat(closest_exp) - datetime.date.today()).days / 365.0
+        days = (datetime.date.fromisoformat(closest_exp) - datetime.date.today()).days
+        T = max(days, 30) / 365.0
         r = 0.05
         sigma = atm_iv
         greeks = black_scholes_greeks(current_price, K, T, r, sigma, "call")
         analysis["greeks"] = greeks
-        mc = monte_carlo_projection(current_price, sigma, r, T, 252, 1000)
+        mc = monte_carlo_projection(current_price, sigma, r, T, 100, 100)
         analysis["mc_projection"] = mc
         analysis["vol_smile"] = "Not implemented"
         analysis["options"] = f"Target POP {args.target_pop}"
-        hist = stock.history(period=args.hist_period)
-        if hist['Volume'][-1] > hist['Volume'].mean():
-            analysis["vsa"] = "High volume, relevant"
-        else:
-            analysis["vsa"] = "Not relevant"
+        try:
+            hist = None
+            if stock:
+                hist = stock.history(period=args.hist_period)
+            if hist is not None and 'Volume' in hist and not hist.empty:
+                if hist['Volume'][-1] > hist['Volume'].mean():
+                    analysis["vsa"] = "High volume, relevant"
+                else:
+                    analysis["vsa"] = "Not relevant"
+            else:
+                analysis["vsa"] = "Unknown"
+        except Exception as e:
+            analysis["vsa"] = f"Unknown, yf failed: {str(e)}"
         analysis["pbd"] = "Not implemented"
         output["analysis"][ticker] = analysis
     print(json.dumps(output, indent=2))

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-16T13:19:51.259Z",
+  "updatedAt": "2026-04-19T03:42:39.145Z",
   "entries": {
     "memory:memory/2026-04-12.md:1:5": {
       "key": "memory:memory/2026-04-12.md:1:5",
@@ -40,20 +40,25 @@
       "endLine": 55,
       "source": "memory",
       "snippet": "- API keys loaded from `/home/kcinc/.openclaw/.env` (MBOUM_API_KEY, FINTEL_API_KEY) - Tested: 10-73 BMNR → $21.28 (MBOUM working, yfinance crumb auth broken) - Usage: `python3 scripts/10-73.py --query BMNR` or `--symbol BMNR,SPY` **Code Stability Policy Implemented:** - Created `.code-integrity-check.sh` — prevents script duplication - Created `.CODE-STABILITY-POLICY.md` — enforces canonical locations - Rule: hermes-config/10-codes/scripts/ is read-only reference; rebuild in openclaw/scripts/ - Prevents future drift/reimplementation **Skills Integration Status:** - self-improving: Active (corrections.md) - ontology: 10-73 entities wired (SLV/silver assets) - github: eth_sfr weekly sync que",
-      "recallCount": 2,
+      "recallCount": 9,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.7877309494977136,
-      "maxScore": 0.43451016483355953,
+      "totalScore": 3.724250617346292,
+      "maxScore": 0.5311502195837515,
       "firstRecalledAt": "2026-04-13T12:35:51.268Z",
-      "lastRecalledAt": "2026-04-16T13:19:51.259Z",
+      "lastRecalledAt": "2026-04-19T03:42:39.145Z",
       "queryHashes": [
         "336bd2d65b7b",
-        "9116eced5055"
+        "9116eced5055",
+        "129aaa8a2e25",
+        "031996f593bf",
+        "a97b358abeb0",
+        "00fcea585311"
       ],
       "recallDays": [
         "2026-04-13",
-        "2026-04-16"
+        "2026-04-16",
+        "2026-04-18"
       ],
       "conceptTags": [
         "home/kcinc",
@@ -64,6 +69,69 @@
         "scripts/10-73.py",
         "code-integrity-check.sh",
         "code-stability-policy.md"
+      ]
+    },
+    "memory:memory/2026-04-10.md:1:9": {
+      "key": "memory:memory/2026-04-10.md:1:9",
+      "path": "memory/2026-04-10.md",
+      "startLine": 1,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "**2026-04-10 Session Flush**: - APIs secure .env: Voyage, Mboum, Fintel, NewsAPI, CoinGecko (demo/pro), Dune, Etherscan, Alpaca paper (PKBWHV4... 8UcP...), Massive (IXzeu...) - 10-codes master rebuilt (37 codes hierarchy/runner), scripts: run_10code.py dispatch, 10_323 CSP Greeks/MC, 10_104 ETH health, 10_105 AVAX - Skills created: financial-market-analysis (Mboum/Fintel/10-323), deep-intel-scan (10-11 dashboard X/news/leads) - SOUL.md updated: Plain simple English rule (short sentences, beginner friendly) - GH PAT kilo5-eng repos (hermes-config/openclaw-workspace-daily etc.), repo openclaw-10-codes backup - Healthcheck: Telegram sender approved, jq apt, gateway local loopback - Cron: self-i",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.7015239673781766,
+      "maxScore": 0.3510285952651686,
+      "firstRecalledAt": "2026-04-19T03:20:32.031Z",
+      "lastRecalledAt": "2026-04-19T03:38:56.611Z",
+      "queryHashes": [
+        "129aaa8a2e25"
+      ],
+      "recallDays": [
+        "2026-04-18"
+      ],
+      "conceptTags": [
+        "backup",
+        "gateway",
+        "demo/pro",
+        "10-codes",
+        "hierarchy/runner",
+        "run-10code.py",
+        "10-323",
+        "greeks/mc"
+      ]
+    },
+    "memory:memory/2026-04-12.md:1:28": {
+      "key": "memory:memory/2026-04-12.md:1:28",
+      "path": "memory/2026-04-12.md",
+      "startLine": 1,
+      "endLine": 28,
+      "source": "memory",
+      "snippet": "10-73 slv: Script created scripts/10-73-slv.sh (curl Yahoo/Kitco grep). SLV ETF $69.08 (Apr 10 close) silver spot $75.76 bid (Kitco). 2026-04-12. Telegram sync cron \"telegram-main-sync\" added (3s interval), raw leak fixed to internal \"no relay\", then removed. Only 10-11-daily cron left. Gateway restarted pid 26328. openclaw status OK. 10-73 slv: Script created scripts/10-73-slv.sh (curl Yahoo/Kitco grep). SLV ETF $69.08 (Apr 10 close) silver spot $75.76 bid (Kitco). 2026-04-12. Telegram sync cron \"telegram-main-sync\" added (3s interval), raw leak fixed to internal \"no relay\", then removed. Only 10-11-daily cron left. Gateway restarted pid 26328. openclaw status OK. --- **2026-04-12 21:",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9228473511849525,
+      "maxScore": 0.5191489551463729,
+      "firstRecalledAt": "2026-04-19T03:24:03.188Z",
+      "lastRecalledAt": "2026-04-19T03:42:39.145Z",
+      "queryHashes": [
+        "031996f593bf",
+        "00fcea585311"
+      ],
+      "recallDays": [
+        "2026-04-18"
+      ],
+      "conceptTags": [
+        "gateway",
+        "10-73",
+        "scripts/10-73-slv.sh",
+        "yahoo/kitco",
+        "69.08",
+        "75.76",
+        "telegram-main-sync",
+        "10-11-daily"
       ]
     }
   }

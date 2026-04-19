@@ -1,0 +1,1 @@
+langgraph\nlangchain-openai\npolygon-api-client\npython-dotenv\napscheduler\nrequests\nfastapi\nuvicorn[standard]\nsqlalchemy\npsycopg2-binary\nalembic\npydantic\npython-jose[cryptography]

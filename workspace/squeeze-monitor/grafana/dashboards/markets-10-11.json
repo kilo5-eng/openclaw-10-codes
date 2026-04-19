@@ -1,0 +1,1 @@
+{\"dashboard\": {\"title\": \"10-11 Markets\", \"panels\": [{\"title\": \"BTC Price\", \"type\": \"gauge\", \"targets\": [{\"rawSql\": \"SELECT price FROM markets WHERE ticker='BTC' ORDER BY timestamp DESC LIMIT 1\"}]}, {\"title\": \"ETH Supply %\", \"type\": \"stat\", \"targets\": [{\"rawSql\": \"SELECT supply_pct FROM markets WHERE ticker='ETH'\"}]}], \"refresh\": \"5m\"}}
