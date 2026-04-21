@@ -1,0 +1,43 @@
+# Daily Healthcheck: 2026-04-21 09:57 AM EDT
+
+## Summary
+- Security Audit (--deep): 1 CRITICAL, 4 WARN, 2 INFO
+- Update Status: Up to date (stable channel, pnpm latest 2026.4.15)
+- OpenClaw Status: Nominal (WSL2 Linux, gateway loopback + Tailscale serve, 42 sessions, 29 task issues)
+
+## Posture Assessment (vs Home/Workstation Balanced)
+- **Aligned**: Gateway loopback bind, Tailscale tailnet exposure (LAN-equivalent), personal-assistant trust model.
+- **Gaps**:
+  - CRITICAL: Small model (ollama/llama3.1:8b) in fallbacks without sandbox/web isolation.
+  - WARN: trusted_proxies empty (ok for loopback), docker sandbox config unused, ineffective node denyCommands, potential multi-user signals (Telegram groups).
+- **New Actions**: Enable sandbox for small-model sessions; review/clean denyCommands; confirm single-user intent.
+- Host OS: No direct checks (WSL2); recommend UFW/firewalld + auto-updates.
+
+## Full Outputs
+
+### openclaw security audit --deep
+```
+Summary: 1 critical · 4 warn · 2 info
+
+CRITICAL
+models.small_params Small models require sandboxing and web tools disabled
+  Small models (<=300B params) detected:
+- ollama/llama3.1:8b (8B) @ agents.defaults.model.fallbacks (unsafe; sandbox=off; web=[web_fetch])
+[... truncated for log brevity; full in session logs]
+```
+
+### openclaw update status
+```
+Install  │ pnpm
+Channel  │ stable (default)
+Update   │ pnpm · up to date · npm latest 2026.4.15
+```
+
+### openclaw status
+```
+OS                   │ linux 6.6.87.2-microsoft-standard-WSL2 (x64) · node 22.22.2
+[... full status truncated; see session for complete]
+Tasks                │ 4 active · 0 queued · 4 running · 29 issues · audit 10 errors · 15 warn · 67 tracked
+```
+
+Log complete. Review if critical needs action.

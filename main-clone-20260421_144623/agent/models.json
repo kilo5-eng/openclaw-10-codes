@@ -1,0 +1,573 @@
+{
+  "providers": {
+    "xai": {
+      "baseUrl": "https://api.x.ai/v1",
+      "api": "openai-responses",
+      "models": [
+        {
+          "id": "grok-3",
+          "name": "Grok 3",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.75,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 8192,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-3-fast",
+          "name": "Grok 3 Fast",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 25,
+            "cacheRead": 1.25,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 8192,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-3-mini",
+          "name": "Grok 3 Mini",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 0.5,
+            "cacheRead": 0.075,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 8192,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-3-mini-fast",
+          "name": "Grok 3 Mini Fast",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.6,
+            "output": 4,
+            "cacheRead": 0.15,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 8192,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4",
+          "name": "Grok 4",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.75,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 64000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4-0709",
+          "name": "Grok 4 0709",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.75,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 64000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4-fast",
+          "name": "Grok 4 Fast",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.2,
+            "output": 0.5,
+            "cacheRead": 0.05,
+            "cacheWrite": 0
+          },
+          "contextWindow": 2000000,
+          "maxTokens": 30000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4-fast-non-reasoning",
+          "name": "Grok 4 Fast (Non-Reasoning)",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.2,
+            "output": 0.5,
+            "cacheRead": 0.05,
+            "cacheWrite": 0
+          },
+          "contextWindow": 2000000,
+          "maxTokens": 30000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4-1-fast",
+          "name": "Grok 4.1 Fast",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.2,
+            "output": 0.5,
+            "cacheRead": 0.05,
+            "cacheWrite": 0
+          },
+          "contextWindow": 2000000,
+          "maxTokens": 30000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4-1-fast-non-reasoning",
+          "name": "Grok 4.1 Fast (Non-Reasoning)",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.2,
+            "output": 0.5,
+            "cacheRead": 0.05,
+            "cacheWrite": 0
+          },
+          "contextWindow": 2000000,
+          "maxTokens": 30000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4.20-beta-latest-reasoning",
+          "name": "Grok 4.20 Beta Latest (Reasoning)",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 2,
+            "output": 6,
+            "cacheRead": 0.2,
+            "cacheWrite": 0
+          },
+          "contextWindow": 2000000,
+          "maxTokens": 30000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4.20-beta-latest-non-reasoning",
+          "name": "Grok 4.20 Beta Latest (Non-Reasoning)",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 2,
+            "output": 6,
+            "cacheRead": 0.2,
+            "cacheWrite": 0
+          },
+          "contextWindow": 2000000,
+          "maxTokens": 30000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-code-fast-1",
+          "name": "Grok Code Fast 1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.2,
+            "output": 1.5,
+            "cacheRead": 0.02,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 10000,
+          "api": "openai-responses"
+        }
+      ],
+      "apiKey": "secretref-managed"
+    },
+    "x-ai": {
+      "baseUrl": "https://api.x.ai/v1",
+      "api": "openai-responses",
+      "models": [
+        {
+          "id": "grok-3",
+          "name": "Grok 3",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.75,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 8192,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-3-fast",
+          "name": "Grok 3 Fast",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 5,
+            "output": 25,
+            "cacheRead": 1.25,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 8192,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-3-mini",
+          "name": "Grok 3 Mini",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 0.5,
+            "cacheRead": 0.075,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 8192,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-3-mini-fast",
+          "name": "Grok 3 Mini Fast",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.6,
+            "output": 4,
+            "cacheRead": 0.15,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 8192,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4",
+          "name": "Grok 4",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.75,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 64000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4-0709",
+          "name": "Grok 4 0709",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 3,
+            "output": 15,
+            "cacheRead": 0.75,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 64000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4-fast",
+          "name": "Grok 4 Fast",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.2,
+            "output": 0.5,
+            "cacheRead": 0.05,
+            "cacheWrite": 0
+          },
+          "contextWindow": 2000000,
+          "maxTokens": 30000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4-fast-non-reasoning",
+          "name": "Grok 4 Fast (Non-Reasoning)",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.2,
+            "output": 0.5,
+            "cacheRead": 0.05,
+            "cacheWrite": 0
+          },
+          "contextWindow": 2000000,
+          "maxTokens": 30000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4-1-fast",
+          "name": "Grok 4.1 Fast",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.2,
+            "output": 0.5,
+            "cacheRead": 0.05,
+            "cacheWrite": 0
+          },
+          "contextWindow": 2000000,
+          "maxTokens": 30000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4-1-fast-non-reasoning",
+          "name": "Grok 4.1 Fast (Non-Reasoning)",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.2,
+            "output": 0.5,
+            "cacheRead": 0.05,
+            "cacheWrite": 0
+          },
+          "contextWindow": 2000000,
+          "maxTokens": 30000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4.20-beta-latest-reasoning",
+          "name": "Grok 4.20 Beta Latest (Reasoning)",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 2,
+            "output": 6,
+            "cacheRead": 0.2,
+            "cacheWrite": 0
+          },
+          "contextWindow": 2000000,
+          "maxTokens": 30000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-4.20-beta-latest-non-reasoning",
+          "name": "Grok 4.20 Beta Latest (Non-Reasoning)",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 2,
+            "output": 6,
+            "cacheRead": 0.2,
+            "cacheWrite": 0
+          },
+          "contextWindow": 2000000,
+          "maxTokens": 30000,
+          "api": "openai-responses"
+        },
+        {
+          "id": "grok-code-fast-1",
+          "name": "Grok Code Fast 1",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.2,
+            "output": 1.5,
+            "cacheRead": 0.02,
+            "cacheWrite": 0
+          },
+          "contextWindow": 256000,
+          "maxTokens": 10000,
+          "api": "openai-responses"
+        }
+      ],
+      "apiKey": "secretref-managed"
+    },
+    "codex": {
+      "baseUrl": "https://chatgpt.com/backend-api/v1",
+      "apiKey": "codex-app-server",
+      "auth": "token",
+      "api": "openai-codex-responses",
+      "models": [
+        {
+          "id": "gpt-5.4",
+          "name": "gpt-5.4",
+          "api": "openai-codex-responses",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 272000,
+          "maxTokens": 128000,
+          "compat": {
+            "supportsReasoningEffort": true,
+            "supportsUsageInStreaming": true
+          }
+        },
+        {
+          "id": "gpt-5.4-mini",
+          "name": "GPT-5.4-Mini",
+          "api": "openai-codex-responses",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 272000,
+          "maxTokens": 128000,
+          "compat": {
+            "supportsReasoningEffort": true,
+            "supportsUsageInStreaming": true
+          }
+        },
+        {
+          "id": "gpt-5.2",
+          "name": "gpt-5.2",
+          "api": "openai-codex-responses",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 272000,
+          "maxTokens": 128000,
+          "compat": {
+            "supportsReasoningEffort": true,
+            "supportsUsageInStreaming": true
+          }
+        }
+      ]
+    },
+    "github-copilot": {
+      "baseUrl": "https://api.individual.githubcopilot.com/v1",
+      "models": []
+    },
+    "ollama": {
+      "baseUrl": "http://127.0.0.1:11434/v1",
+      "api": "ollama",
+      "models": [
+        {
+          "id": "llama3.1:8b",
+          "name": "llama3.1:8b",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 8192
+        }
+      ],
+      "apiKey": "OLLAMA_API_KEY"
+    }
+  }
+}

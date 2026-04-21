@@ -1,0 +1,1 @@
+# Trading/ML Hub\n\n## Quick Ops\n- Fetch: `cd trading && python scripts/data-fetch/mboum/10-73-slv-v4.sh`\n- Cache: trading/data/\n- Analysis: scripts/analysis/\n\n## Cron Targets\nopenclaw cron \"cd trading && python scripts/data-fetch/mboum/10-73-slv-v4.sh\" # 9AM daily

@@ -1,0 +1,7 @@
+## 10-73 BMNR Session Backup 2026-04-21
+### Key Files:
+
+### Contents Summary:
+# MBOUM API Endpoints\n\n## v1/markets/quote (Real-time Quote)\nGET https://api.mboum.com/v1/markets/quote?symbol={TICKER}&type=STOCKS|ETF|... (or symbols=comma list)\nHeaders: Authorization: Bearer {key}\n\n## v2/markets/stock/short-interest (Short Interest)\nGET https://api.mboum.com/v2/markets/stock/short-interest?ticker={TICKER}&type=STOCKS|ETF|...\nHeaders: Authorization: Bearer {key}\n\n## v1/markets/options (Live Chain)\nGET https://api.mboum.com/v1/markets/options?ticker={TICKER}&expiration={unix_ts opt}&display=list|straddle\nHeaders: Authorization: Bearer {key}\n\n## v2/markets/options (Historical Chain)\nGET https://api.mboum.com/v2/markets/options?ticker={TICKER}&type=STOCKS|ETF&from=YYYY-MM-DD&to=YYYY-MM-DD&limit=50\nHeaders: Authorization: Bearer {key}\n\n## v3/markets/options (Exp Date Chain)\nGET https://api.mboum.com/v3/markets/options?ticker={TICKER|SPY|$SPX|ES^F}&expiration=YYYY-MM-DD opt\nHeaders: Authorization: Bearer {key}\n\n**Resp Parse**: {"meta": {}, "body": [{regularMarketPrice, netChange, volume, ...}] } price = body[0].regularMarketPrice
+Fallback old format.
+**Priority**: Quote > short/opts v1-3 (10-73/85/323/78).

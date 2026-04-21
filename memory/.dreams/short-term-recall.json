@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-19T03:42:39.145Z",
+  "updatedAt": "2026-04-21T17:36:32.944Z",
   "entries": {
     "memory:memory/2026-04-12.md:1:5": {
       "key": "memory:memory/2026-04-12.md:1:5",
@@ -40,25 +40,29 @@
       "endLine": 55,
       "source": "memory",
       "snippet": "- API keys loaded from `/home/kcinc/.openclaw/.env` (MBOUM_API_KEY, FINTEL_API_KEY) - Tested: 10-73 BMNR → $21.28 (MBOUM working, yfinance crumb auth broken) - Usage: `python3 scripts/10-73.py --query BMNR` or `--symbol BMNR,SPY` **Code Stability Policy Implemented:** - Created `.code-integrity-check.sh` — prevents script duplication - Created `.CODE-STABILITY-POLICY.md` — enforces canonical locations - Rule: hermes-config/10-codes/scripts/ is read-only reference; rebuild in openclaw/scripts/ - Prevents future drift/reimplementation **Skills Integration Status:** - self-improving: Active (corrections.md) - ontology: 10-73 entities wired (SLV/silver assets) - github: eth_sfr weekly sync que",
-      "recallCount": 9,
+      "recallCount": 12,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 3.724250617346292,
+      "totalScore": 5.015766850842358,
       "maxScore": 0.5311502195837515,
       "firstRecalledAt": "2026-04-13T12:35:51.268Z",
-      "lastRecalledAt": "2026-04-19T03:42:39.145Z",
+      "lastRecalledAt": "2026-04-21T17:36:32.944Z",
       "queryHashes": [
         "336bd2d65b7b",
         "9116eced5055",
         "129aaa8a2e25",
         "031996f593bf",
         "a97b358abeb0",
-        "00fcea585311"
+        "00fcea585311",
+        "8674f7fb99ed"
       ],
       "recallDays": [
         "2026-04-13",
         "2026-04-16",
-        "2026-04-18"
+        "2026-04-18",
+        "2026-04-19",
+        "2026-04-20",
+        "2026-04-21"
       ],
       "conceptTags": [
         "home/kcinc",
@@ -109,19 +113,21 @@
       "endLine": 28,
       "source": "memory",
       "snippet": "10-73 slv: Script created scripts/10-73-slv.sh (curl Yahoo/Kitco grep). SLV ETF $69.08 (Apr 10 close) silver spot $75.76 bid (Kitco). 2026-04-12. Telegram sync cron \"telegram-main-sync\" added (3s interval), raw leak fixed to internal \"no relay\", then removed. Only 10-11-daily cron left. Gateway restarted pid 26328. openclaw status OK. 10-73 slv: Script created scripts/10-73-slv.sh (curl Yahoo/Kitco grep). SLV ETF $69.08 (Apr 10 close) silver spot $75.76 bid (Kitco). 2026-04-12. Telegram sync cron \"telegram-main-sync\" added (3s interval), raw leak fixed to internal \"no relay\", then removed. Only 10-11-daily cron left. Gateway restarted pid 26328. openclaw status OK. --- **2026-04-12 21:",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.9228473511849525,
+      "totalScore": 1.2544162226285525,
       "maxScore": 0.5191489551463729,
       "firstRecalledAt": "2026-04-19T03:24:03.188Z",
-      "lastRecalledAt": "2026-04-19T03:42:39.145Z",
+      "lastRecalledAt": "2026-04-20T18:13:15.898Z",
       "queryHashes": [
         "031996f593bf",
-        "00fcea585311"
+        "00fcea585311",
+        "8674f7fb99ed"
       ],
       "recallDays": [
-        "2026-04-18"
+        "2026-04-18",
+        "2026-04-20"
       ],
       "conceptTags": [
         "gateway",
@@ -132,6 +138,38 @@
         "75.76",
         "telegram-main-sync",
         "10-11-daily"
+      ]
+    },
+    "memory:memory/2026-04-09.md:1:11": {
+      "key": "memory:memory/2026-04-09.md:1:11",
+      "path": "memory/2026-04-09.md",
+      "startLine": 1,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "# 2026-04-09 Memory Log (pre-restart) Full session: Bootstrap/keys/APIs debug/10-77 SLV low/ Clawhub hunt. - Name: kilobee 🐝 (Hermes B01 lineage) - hermes-config personas consolidated - Git committed - Bootstrap complete, starting over clean. - Session start: Thu 2026-04-09 15:27 EDT - User via openclaw-tui - Bootstrap in progress",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.1002988266432796,
+      "maxScore": 0.3681426736444278,
+      "firstRecalledAt": "2026-04-20T02:13:03.463Z",
+      "lastRecalledAt": "2026-04-21T16:45:38.951Z",
+      "queryHashes": [
+        "424def966289"
+      ],
+      "recallDays": [
+        "2026-04-19",
+        "2026-04-21"
+      ],
+      "conceptTags": [
+        "pre-restart",
+        "bootstrap/keys/apis",
+        "debug/10-77",
+        "hermes-config",
+        "openclaw-tui",
+        "log",
+        "pre",
+        "restart"
       ]
     }
   }

@@ -1,0 +1,1 @@
+**2026-04-20**: Correction: Always run 10-code requests (10-88 etc.) fresh – no assume prior data/prices. Fetch yf/TV/MBOUM real-time. Self-rule: tool first, memory secondary.\n\nPrior error: Assumed BMNR price – use scripts/10-73.py or web_fetch.
