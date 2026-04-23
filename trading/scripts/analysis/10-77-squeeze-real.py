@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0, "../../data-fetch/hermes-config/10-codes/scripts")
+
 #!/usr/bin/env python3
 """10-77: Multi-tool squeeze consensus (EFUR/Gamma/MaxPain/SFR).
 
