@@ -1,0 +1,241 @@
+BMNR Dashboard 2026-04-22
+
+
+=== BMNR ===
+--- PBD (BMNR) ---
+
+10-78 BMNR (~$43.03) 🐝
+
+  TF | POC | VA | Setup | Bias
+  ---|-----|----|-------|------
+  1wk | $21.68 | $18.35-$22.96 | **D Fair** | Range-bound
+  1d  | $21.68 | $18.48-$22.70 | **P Ext** | Bearish
+  4h  | $21.68 | $18.35-$22.32 | **P Ext** | Bearish
+
+Rec: Hold fair SI watch. 🐝
+Mode: ONLINE | Mock: False
+
+--- Options (BMNR) ---
+{
+  "date": "2026-04-22",
+  "symbols": [
+    "BMNR"
+  ],
+  "analysis": {
+    "BMNR": {
+      "current_price": 22.82,
+      "options_source": "mboum",
+      "options_chain_summary": {
+        "expiration": "2026-04-24",
+        "num_calls": 40,
+        "num_puts": 40,
+        "selected_expiration_epoch": 1776988800
+      },
+      "atm_iv": 0.770510107421875,
+      "greeks": {
+        "delta": 0.4584132062756024,
+        "gamma": 0.3048451544917048,
+        "theta": -47.624574324203785,
+        "vega": 0.670233371252137,
+        "rho": 0.05491556397736083
+      },
+      "mc_projection": {
+        "mean": 22.83100101256466,
+        "95_ci_low": 20.397575066612198,
+        "95_ci_high": 25.566419186422927
+      },
+      "options": "Target POP 0.8",
+      "market_snapshot": {
+        "bid": 22.83,
+        "ask": 22.84,
+        "regularMarketVolume": 29732711.0,
+        "averageDailyVolume10Day": 44285650.0
+      },
+      "top_calls": [
+        {
+          "contractSymbol": "BMNR260424C00025000",
+          "strike": 25,
+          "currency": "USD",
+          "lastPrice": 0.11,
+          "change": 0.030000001,
+          "percentChange": 33.333336,
+          "volume": 5961,
+          "openInterest": 16166,
+          "bid": 0.1,
+          "ask": 0.12,
+          "contractSize": "REGULAR",
+          "expiration": 1776988800,
+          "lastTradeDate": 1776878001,
+          "impliedVolatility": 0.85937640625,
+          "inTheMoney": false
+        },
+        {
+          "contractSymbol": "BMNR260424C00024000",
+          "strike": 24,
+          "currency": "USD",
+          "lastPrice": 0.25,
+          "change": 0.099999994,
+          "percentChange": 66.66666,
+          "volume": 7222,
+          "openInterest": 10589,
+          "bid": 0.24,
+          "ask": 0.26,
+          "contractSize": "REGULAR",
+          "expiration": 1776988800,
+          "lastTradeDate": 1776877970,
+          "impliedVolatility": 0.8085956640624999,
+          "inTheMoney": false
+        },
+        {
+          "contractSymbol": "BMNR260424C00027000",
+          "strike": 27,
+          "currency": "USD",
+          "lastPrice": 0.03,
+          "change": 0.01,
+          "percentChange": 33.333336,
+          "volume": 744,
+          "openInterest": 10174,
+          "bid": 0.03,
+          "ask": 0.04,
+          "contractSize": "REGULAR",
+          "expiration": 1776988800,
+          "lastTradeDate": 1776877907,
+          "impliedVolatility": 1.0390673046875003,
+          "inTheMoney": false
+        },
+        {
+          "contractSymbol": "BMNR260424C00023000",
+          "strike": 23,
+          "currency": "USD",
+          "lastPrice": 0.6,
+          "change": 0.26000002,
+          "percentChange": 76.4706,
+          "volume": 3356,
+          "openInterest": 8191,
+          "bid": 0.57,
+          "ask": 0.61,
+          "contractSize": "REGULAR",
+          "expiration": 1776988800,
+          "lastTradeDate": 1776877509,
+          "impliedVolatility": 0.8164080859374999,
+          "inTheMoney": false
+        },
+        {
+          "contractSymbol": "BMNR260424C00024500",
+          "strike": 24.5,
+          "currency": "USD",
+          "lastPrice": 0.16,
+          "change": 0.04,
+          "percentChange": 30.769232,
+          "volume": 1569,
+          "openInterest": 6303,
+          "bid": 0.16,
+          "ask": 0.17,
+          "contractSize": "REGULAR",
+          "expiration": 1776988800,
+          "lastTradeDate": 1776877961,
+          "impliedVolatility": 0.8320329296874999,
+          "inTheMoney": false
+        }
+      ],
+      "top_puts": [
+        {
+          "contractSymbol": "BMNR260424P00018000",
+          "strike": 18,
+          "currency": "USD",
+          "lastPrice": 0.01,
+          "change": -0.04,
+          "percentChange": -80.00001,
+          "volume": 757,
+          "openInterest": 17312,
+          "bid": 0.01,
+          "ask": 0.02,
+          "contractSize": "REGULAR",
+          "expiration": 1776988800,
+          "lastTradeDate": 1776876513,
+          "impliedVolatility": 1.2500037499999999,
+          "inTheMoney": false
+        },
+        {
+          "contractSymbol": "BMNR260424P00014500",
+          "strike": 14.5,
+          "currency": "USD",
+          "lastPrice": 0.01,
+          "change": 0,
+          "percentChange": 0,
+          "volume": 3,
+          "openInterest": 15711,
+          "bid": 0,
+          "ask": 0.01,
+          "contractSize": "REGULAR",
+          "expiration": 1776988800,
+          "lastTradeDate": 1776711280,
+          "impliedVolatility": 1.9375003125,
+          "inTheMoney": false
+        },
+        {
+          "contractSymbol": "BMNR260424P00012000",
+          "strike": 12,
+          "currency": "USD",
+          "lastPrice": 0.01,
+          "change": 0,
+          "percentChange": 0,
+          "volume": 15,
+          "openInterest": 9212,
+          "bid": 0,
+          "ask": 0.01,
+          "contractSize": "REGULAR",
+          "expiration": 1776988800,
+          "lastTradeDate": 1776865882,
+          "impliedVolatility": 2.6250034375,
+          "inTheMoney": false
+        },
+        {
+          "contractSymbol": "BMNR260424P00020000",
+          "strike": 20,
+          "currency": "USD",
+          "lastPrice": 0.05,
+          "change": -0.13000001,
+          "percentChange": -72.22222,
+          "volume": 726,
+          "openInterest": 5602,
+          "bid": 0.04,
+          "ask": 0.05,
+          "contractSize": "REGULAR",
+          "expiration": 1776988800,
+          "lastTradeDate": 1776876934,
+          "impliedVolatility": 0.929688203125,
+          "inTheMoney": false
+        },
+        {
+          "contractSymbol": "BMNR260424P00021000",
+          "strike": 21,
+          "currency": "USD",
+          "lastPrice": 0.11,
+          "change": -0.31,
+          "percentChange": -73.809525,
+          "volume": 1008,
+          "openInterest": 5226,
+          "bid": 0.1,
+          "ask": 0.11,
+          "contractSize": "REGULAR",
+          "expiration": 1776988800,
+          "lastTradeDate": 1776877896,
+          "impliedVolatility": 0.8125018749999999,
+          "inTheMoney": false
+        }
+      ],
+      "vsa": "Not relevant",
+      "pbd": "Not implemented"
+    }
+  }
+}
+--- Fintel (BMNR) ---
+=== 10-85 Fintel Thesis — 2026-04-22 13:44 ===
+
+Ticker  Short Vol % Short Date  Owners              Top Holder  Top Holder %  Insider Hold % Latest Insider Latest Date      Signal
+  BMNR         15.0 2026-04-21      25 Clear Street Group Inc.        319.96            42.7       Purchase  2026-04-20 INSIDER BUY
+
+Score: 1/1 — HIGH CONFLUENCE w/ PBD.
+
+Daily Rec: [PBD + Options + Fintel confluence]

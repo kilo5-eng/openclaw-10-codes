@@ -1,0 +1,30 @@
+{
+  "BMNR": {
+    "short_interest_pct": 8.5,
+    "short_pct": 8.5,
+    "si_pct": 8.5,
+    "institutional_delta_qtr": 2.3,
+    "ticker": "BMNR"
+  },
+  "JPM": {
+    "short_interest_pct": 0.9,
+    "short_pct": 0.9,
+    "si_pct": 0.9,
+    "institutional_delta_qtr": 1.2,
+    "ticker": "JPM"
+  },
+  "IBRX": {
+    "short_interest_pct": 5.2,
+    "short_pct": 5.2,
+    "si_pct": 5.2,
+    "institutional_delta_qtr": 0.8,
+    "ticker": "IBRX"
+  },
+  "POET": {
+    "short_interest_pct": 12.3,
+    "short_pct": 12.3,
+    "si_pct": 12.3,
+    "institutional_delta_qtr": -1.5,
+    "ticker": "POET"
+  }
+}

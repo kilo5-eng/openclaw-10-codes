@@ -10,6 +10,20 @@ if [ -f "/home/kcinc/.openclaw/.env" ]; then
   set +a
 fi
 
+# Multi-ticker dispatch: forward any explicit args to the canonical 10-73 Python script.
+# This preserves the legacy SLV cache behavior only for the no-argument fallback.
+if [ "$#" -gt 0 ]; then
+  case "$1" in
+    -*)
+      exec python3 /home/kcinc/.openclaw/workspace/workspace/hermes-config/10-codes-shared/scripts/10_073_short_interest_compare.py "$@"
+      ;;
+    *)
+      symbols=$(printf '%s,' "$@" | sed 's/,$//')
+      exec python3 /home/kcinc/.openclaw/workspace/workspace/hermes-config/10-codes-shared/scripts/10_073_short_interest_compare.py --symbol "$symbols"
+      ;;
+  esac
+fi
+
 CACHE_FILE="/home/kcinc/.openclaw/workspace/.cache-10-73-slv.json"
 CACHE_TTL=3600  # 1 hour in seconds
 API_MBOUM="${MBOUM_API_KEY:-}${MBOUM_API:-}"

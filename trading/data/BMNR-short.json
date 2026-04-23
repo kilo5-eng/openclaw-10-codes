@@ -1,0 +1,9 @@
+{
+  "ticker": "BMNR",
+  "date": "2026-04-23",
+  "short": {},
+  "raw": {
+    "success": false,
+    "message": "No data returned"
+  }
+}

@@ -1,26 +1,28 @@
-# MBOUM API (api.mboum.com) - Priority Source
+**Options v2 Hist detailed**: `/v2/markets/options?ticker={}&type=STOCKS|ETF&from=YYYY-MM-DD&to=YYYY-MM-DD&limit=50`
+Resp: body array chains.
 
-## Auth
-```
-Authorization: Bearer $MBOUM_API_KEY
-User-Agent: OpenClaw/1.0
-```
+**Crypto Profile**: `GET /v1/crypto/profile?key={crypto_id}` (e.g. bitcoin)
+Headers: `Authorization: Bearer {MBOUM_API_KEY}`
+Query: `key=string (crypto ID)`
+Note: Requires active crypto subscription (current: inactive).
 
-## Endpoints (Priority Order)
-1. **Quote**: `GET /v1/markets/quote?symbol={TICKER}&type=STOCKS`
-   - Resp: `body[0].regularMarketPrice` (spot), `netChange`, vol
-   
-2. **Short Interest**: `GET /v2/markets/stock/short-interest?ticker={TICKER}&type=STOCKS`
-   - Resp: `body[0]`: `interest` (shares), `avgDailyShareVolume`, `daysToCover`
-   - BMNR: Often \"no_data_returned\" (small-cap/normal)
+**Crypto Holders**: `GET /v1/crypto/holders?key={crypto_id}` (e.g. bitcoin)
+Headers: `Authorization: Bearer {MBOUM_API_KEY}`
+Query: `key=string (crypto ID)`
+Note: Requires active crypto subscription (current: inactive, "User not found").
 
-3. **History/OHLC**: `GET /v1/markets/stock/history?symbol={}&interval=1d`
+**Crypto Quotes**: `GET /v1/crypto/quotes?key={crypto_id}` (e.g. bitcoin)
+Headers: `Authorization: Bearer {MBOUM_API_KEY}`
+Query: `key=string (crypto ID)`
+Note: Requires active crypto subscription (current: inactive).
 
-4. **Options**:
-   | v1 Live | `/v1/markets/options?ticker={}&expiration={unix}&display=list`
-   | v2 Hist | `/v2/markets/options?ticker={}&from=YYYY-MM-DD&to=...`
-   | v3 Exp | `/v3/markets/options?ticker={}&expiration=YYYY-MM-DD`
+**Crypto Coins List**: `GET /v1/crypto/coins?page={page}` (e.g. 1)
+Headers: `Authorization: Bearer {MBOUM_API_KEY}`
+Query: `page=string (page number)`
+Note: Requires active crypto subscription (current: inactive, "User not found").
 
-**10-73 Fix**: Quote over history for spot. Add `type=STOCKS` if missing.
-
-Test: `python3 scripts/test-endpoint.py --symbol BMNR --endpoint short-interest`
+**Crypto Modules**: `GET /v1/crypto/modules?module={module}`
+Headers: `Authorization: Bearer {MBOUM_API_KEY}`
+Query: `module=string` (global_metric | trending | most_visited | new_coins | gainer | loser)
+Ex: trending (top trending cryptos)
+Note: Requires active crypto subscription (current: inactive).

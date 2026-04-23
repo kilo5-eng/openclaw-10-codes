@@ -1,0 +1,62 @@
+# Daily Healthcheck: 2026-04-23 09:20 AM EDT (America/New_York)
+
+## Security Audit --deep
+Summary: 0 critical · 4 warn · 1 info
+
+WARN
+gateway.trusted_proxies_missing Reverse proxy headers are not trusted
+  gateway.bind is loopback and gateway.trustedProxies is empty. If you expose the Control UI through a reverse proxy, configure trusted proxies so local-client checks cannot be spoofed.
+  Fix: Set gateway.trustedProxies to your proxy IPs or keep the Control UI local-only.
+tools.exec.security_full_configured Exec security=full is configured
+  Full exec trust is enabled for: main, daily, research, code, assistant.
+  Fix: Prefer tools.exec.security="allowlist" with ask prompts, and reserve "full" for tightly scoped break-glass agents only.
+gateway.nodes.deny_commands_ineffective Some gateway.nodes.denyCommands entries are ineffective
+  gateway.nodes.denyCommands uses exact node command-name matching only (for example `system.run`), not shell-text filtering inside a command payload.
+- Unknown command names (not in defaults/allowCommands): camera.snap (did you mean: camera.list), camera.clip (did you mean: camera.list), screen.record, contacts.add, calendar.add, reminders.add (did you mean: reminders.list), sms.send, sms.search
+  Fix: Use exact command names (for example: canvas.present, canvas.hide, canvas.navigate, canvas.eval, canvas.snapshot, canvas.a2ui.push, canvas.a2ui.pushJSONL, canvas.a2ui.pushJSONL, canvas.a2ui.reset). If you need broader restrictions, remove risky command IDs from allowCommands/default workflows and tighten tools.exec policy.
+security.trust_model.multi_user_heuristic Potential multi-user setup detected (personal-assistant model warning)
+  Heuristic signals indicate this gateway may be reachable by multiple users:
+- channels.telegram.groupPolicy="allowlist" with configured group targets
+Runtime/process tools are exposed without full sandboxing in at least one context.
+Potential high-impact tool exposure contexts:
+- agents.defaults (sandbox=off; runtime=[exec, process]; fs=[read, write, edit, apply_patch]; fs.workspaceOnly=false)
+- agents.list.daily (sandbox=off; runtime=[off]; fs=[read]; fs.workspaceOnly=false)
+- agents.list.research (sandbox=off; runtime=[off]; fs=[read]; fs.workspaceOnly=false)
+- agents.list.assistant (sandbox=off; runtime=[exec]; fs=[read, write, apply_patch]; fs.workspaceOnly=false)
+OpenClaw's default security model is personal-assistant (one trusted operator boundary), not hostile multi-tenant isolation on one shared gateway.
+  Fix: If users may be mutually untrusted, split trust boundaries (separate gateways + credentials, ideally separate OS users/hosts). If you intentionally run shared-user access, set agents.defaults.sandbox.mode="all", keep tools.fs.workspaceOnly=true, deny runtime/fs/web tools unless required, and keep personal/private identities + credentials off that runtime.
+
+INFO
+summary.attack_surface Attack surface summary
+  groups: open=0, allowlist=1
+tools.elevated: enabled
+hooks.webhooks: disabled
+hooks.internal: disabled
+browser control: enabled
+trust model: personal assistant (one trusted operator boundary), not hostile multi-tenant on one shared gateway
+
+## Update Status
+┌──────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Item     │ Value                                                                                                     │
+├──────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Install  │ pnpm                                                                                                      │
+│ Channel  │ stable (default)                                                                                          │
+│ Update   │ pnpm · up to date · npm latest 2026.4.21                                                                  │
+└──────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+## OpenClaw Status
+[Full status output truncated for log; see detailed sections below]
+
+- OS: linux 6.6.87.2-microsoft-standard-WSL2 (x64) · node 22.22.2
+- Channel: stable (default)
+- Update: up to date
+- Gateway: local · ws://127.0.0.1:18789 (local loopback)
+- Tailscale: off
+- Agents: 4 · sessions 28
+- Tasks: 1 active · 22 issues · audit 7 errors · 17 warn
+- Channels: Telegram OK
+
+Security audit (status shallow): 0 critical · 3 warn · 1 info
+Task maintenance suggested: openclaw tasks maintenance --apply
+
+Full outputs available in cron session history.
