@@ -2,6 +2,7 @@
 # 10-77 multi-ticker v1 - MBOUM quote/short/options, handles list or single
 set -euo pipefail
 
+source ../../.env 2>/dev/null || true
 TICKERS=${1:-BMNR}
 DATE=$(date +%Y-%m-%d)
 DIR=\"/home/kcinc/.openclaw/workspace/trading\"
